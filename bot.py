@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
-from config import BOT_TOKEN
+from config import API_TOKEN
 from database import init_db
 from handlers import user_router, admin_router
 
@@ -18,7 +18,7 @@ async def main():
     await init_db()
 
     bot = Bot(
-        token=BOT_TOKEN,
+        token=API_TOKEN,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
     dp = Dispatcher()
